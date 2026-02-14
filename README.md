@@ -2,17 +2,19 @@
 
 ## Project Structure
 
+```text
 app/
- ├── api/
- │    └── routes.py
- ├── core/
- │    └── config.py
- ├── db/
- │    └── pgvector.py
- ├── rag/
- │    ├── embed.py
- │    └── retrieve.py
- └── main.py
+├── api/
+│   └── routes.py
+├── core/
+│   └── config.py
+├── db/
+│   └── pgvector.py
+├── rag/
+│   ├── embed.py
+│   └── retrieve.py
+└── main.py
+
 
 A minimal production-style Retrieval-Augmented Generation (RAG) backend built with:
 
