@@ -1,0 +1,33 @@
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_DB: ragdb
+      POSTGRES_USER: raguser
+      POSTGRES_PASSWORD: ragpass
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  api:
+    build: .
+    environment:
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_NAME: ragdb
+      DB_USER: raguser
+      DB_PASSWORD: ragpass
+      API_KEY: change-me
+      EMBED_MODEL: sentence-transformers/all-MiniLM-L6-v2
+      TOP_K: 5
+      CHUNK_SIZE: 900
+      CHUNK_OVERLAP: 150
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+volumes:
+  pgdata:
+

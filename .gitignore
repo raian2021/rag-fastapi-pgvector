@@ -1,0 +1,27 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+.env
+.env.*
+.venv/
+venv/
+dist/
+build/
+*.egg-info/
+.DS_Store
+
+# caches / models
+.cache/
+models/
+hf_cache/
+huggingface/
+
+# docker volumes (if any mapped locally)
+data/
+pgdata/
+
+# editor
+.vscode/
+.idea/
